@@ -30,6 +30,12 @@ class Pays {
         }
 
 
+        public function __toString()
+        {
+            return $this->nom;
+        }
+
+
         public function ajouterEquipe(Equipe $equipe)
         {
             $this->equipes[] = $equipe;
@@ -37,8 +43,16 @@ class Pays {
 
         public function listerEquipes()
         {
+            echo "<div style='display:flex;flex-direction:column;justify-content:space-around;padding:1vw;margin:2vw;width:20vw;height:20vw;background-color:red;color:white;border-radius:5px'>
+            <p style='font-weight:700;'>";
+            echo $this;
+            echo"</p>
+            <div>";
             foreach ($this->equipes as $equipe) {
                 echo $equipe->getNom() . "<br>";
             }   
+
+            echo "</div>
+            </div>";
         }
 }

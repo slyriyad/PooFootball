@@ -55,6 +55,12 @@ class Equipe {
         }
 
 
+        public function __toString()
+        {
+            return $this->nom.' '.$this->dateCreation ;
+        }
+
+
         public function ajouterContrat(Contrat $contrat)
         {
             $this->contrats[] = $contrat;
@@ -64,8 +70,16 @@ class Equipe {
 
         public function listerJoueurs()
         {
+            echo "<div style='display:flex;flex-direction:column;justify-content:space-around;padding:1vw;margin:2vw;width:20vw;height:20vw;background-color:blue;color:white;border-radius:5px'>
+            <p style='font-weight:700;'>";
+            echo $this;
+            echo"</p>
+            <div>";
             foreach ($this->contrats as $contrat) {
-                echo $contrat->getJoueur()->getPrenom()." ".$contrat->getJoueur()->getNom()." ".$contrat->getAnneeDebutsaison() . "<br>";
+                echo $contrat->getJoueur()." ".$contrat->getAnneeDebutsaison(). "<br>";
             }
+
+            echo "</div>
+            </div>";
         }   
 }

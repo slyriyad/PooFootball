@@ -74,7 +74,26 @@ class Joueur {
 
                 return $this;
         }
-
+        
+        /**
+         * Get the value of nationalite
+         */ 
+        public function getNationalite()
+        {
+            return $this->nationalite;
+        }
+    
+        /**
+         * Set the value of nationalite
+         *
+         * @return  self
+         */ 
+        public function setNationalite($nationalite)
+        {
+            $this->nationalite = $nationalite;
+    
+            return $this;
+        }
 
         public function ajouterContrat(Contrat $contrat)
         {
@@ -82,12 +101,35 @@ class Joueur {
 
         }
 
+        public function __toString()
+        {
+            return $this->prenom . ' ' . $this->nom;
+        }
+
+
+        public function calculerAge()
+{
+        $dateActuelle = new DateTime();
+        $difference = $this->dateNaissance->diff($dateActuelle);
+        return $difference->y; // Retourne l'âge en années
+}
+
 
 
     public function listerEquipes()
         {
+            echo "<div style='display:flex;flex-direction:column;justify-content:space-around;padding:1vw;margin:2vw;width:20vw;height:20vw;background-color:green;color:white;border-radius:5px'>
+            <div class='haut'><p style='font-weight:700;'>";
+            echo $this;
+            echo"</p>
+            <p>";
+            echo $this->getNationalite()." ".$this->calculerAge();
+            "</p></div><div class='bas'>";
             foreach ($this->contrats as $contrat) {
                 echo $contrat->getEquipe()->getNom() ." ".$contrat->getAnneeDebutsaison() . "<br>";
             }
+            echo "</div>
+            </div>";
         }
+
 }
