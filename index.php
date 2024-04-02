@@ -14,20 +14,22 @@ $om = new Equipe('Marseille',2020, $france);
 $barca = new Equipe('FC Barcelone',2020, $espagne);
 
 $neymar = new Joueur('Neymar', 'Jr', '1992-02-05', $france);
-$messi = new Joueur('Lionel', 'Messi', '1987-06-24', $espagne);
+$messi = new Joueur('Messi', 'Lionel', '1987-06-24', $espagne);
 $mbappe = new Joueur('Kylian', 'Mbappé', '2001-12-20', $france);
 
-$psg->ajouterJoueur($neymar, 2017);
-$psg->ajouterJoueur($messi, 2021);
-$psg->ajouterJoueur($mbappe, 2018);
-$barca->ajouterJoueur($neymar, 2018);
+// $contrat->ajouterContrat($neymar, 2017);
+// $psg->ajouterContrat($messi, 2021);
+// $psg->ajouterContrat($mbappe, 2018);
+// $barca->ajouterContrat($neymar, 2018);
 
-$barca->ajouterJoueur($messi, 2004);
+// $barca->ajouterContrat($messi, 2004);
+
+$contrat = new Contrat($neymar, $psg, 2017);
+$contrat = new Contrat($neymar, $barca, 2018);
+$contrat = new Contrat($messi, $psg, 2016);
 
 
 
-
-
-echo $france->listerEquipes();
+// echo $france->listerEquipes();
 echo $psg->listerJoueurs();
 echo $neymar->listerEquipes();

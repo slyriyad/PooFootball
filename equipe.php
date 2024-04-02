@@ -4,7 +4,7 @@ class Equipe {
     private string $nom;
     private int $dateCreation;
     private Pays $pays;
-    private $joueurs = [];
+    private $contrats = [];
 
     public function __construct(string $nom, int $dateCreation, Pays $pays) 
     {
@@ -55,16 +55,17 @@ class Equipe {
         }
 
 
-        public function ajouterJoueur(Joueur $joueur, $anneeDebut)
+        public function ajouterContrat(Contrat $contrat)
         {
-            $joueur->ajouterEquipe($this, $anneeDebut);
-            $this->joueurs[] = $joueur;
+            $this->contrats[] = $contrat;
+
         }
 
-    public function listerJoueurs()
+
+        public function listerJoueurs()
         {
-            foreach ($this->joueurs as $joueur) {
-                echo $joueur->getNom() . "<br>";
-            }  
-        }
+            foreach ($this->contrats as $contrat) {
+                echo $contrat->getJoueur()->getPrenom()." ".$contrat->getJoueur()->getNom()." ".$contrat->getAnneeDebutsaison() . "<br>";
+            }
+        }   
 }
