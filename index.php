@@ -25,9 +25,17 @@ $contrat = new Contrat($messi, $psg, 2016);
 
 
 
-
+echo "<div style='display:flex;flex-direction:row;'>";
 $france->listerEquipes();
 $espagne->listerEquipes();
+echo "</div>";
 
+echo "<div style='display:flex;flex-direction:row;'>";
 $psg->listerJoueurs();
+$barca->listerJoueurs();
+echo "</div>";
+
+echo "<div style='display:flex;flex-direction:row;'>";
 $neymar->listerEquipes();
+$messi->listerEquipes();
+echo "</div>";

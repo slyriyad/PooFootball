@@ -70,7 +70,7 @@ class Equipe {
 
         public function listerJoueurs()
         {
-            echo "<div style='display:flex;flex-direction:column;justify-content:space-around;padding:1vw;margin:2vw;width:20vw;height:20vw;background-color:blue;color:white;border-radius:5px'>
+            echo "<div style='display:flex;flex-direction:column;justify-content:space-around;padding:1vw;margin:1vw;width:20vw;height:20vw;background-color:rgb(103, 131, 179);color:white;border-radius:5px'>
             <p style='font-weight:700;'>";
             echo $this;
             echo"</p>

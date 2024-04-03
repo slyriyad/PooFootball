@@ -118,13 +118,13 @@ class Joueur {
 
     public function listerEquipes()
         {
-            echo "<div style='display:flex;flex-direction:column;justify-content:space-around;padding:1vw;margin:2vw;width:20vw;height:20vw;background-color:green;color:white;border-radius:5px'>
-            <div class='haut'><p style='font-weight:700;'>";
+            echo "<div style='display:flex;flex-direction: column;justify-content:space-around;padding:1vw;margin:1vw;width:20vw;height:20vw;background-color:rgb(106, 175, 92);color:white;border-radius:5px'>
+            <div class='haut'><p style='font-weight:700;margin:0px'>";
             echo $this;
             echo"</p>
-            <p>";
+            <p style='margin:0px;font-size:1vw;'>";
             echo $this->getNationalite()." ".$this->calculerAge();
-            "</p></div><div class='bas'>";
+            echo "</p></div><div class='bas'>";
             foreach ($this->contrats as $contrat) {
                 echo $contrat->getEquipe()->getNom() ." ".$contrat->getAnneeDebutsaison() . "<br>";
             }

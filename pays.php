@@ -43,15 +43,15 @@ class Pays {
 
         public function listerEquipes()
         {
-            echo "<div style='display:flex;flex-direction:column;justify-content:space-around;padding:1vw;margin:2vw;width:20vw;height:20vw;background-color:red;color:white;border-radius:5px'>
-            <p style='font-weight:700;'>";
+            echo "<div style='display:flex;flex-direction:column;justify-content:space-around;width:20vw;padding:1vw;margin:1vw;width:20vw;height:20vw;background-color:rgb(188, 102, 101);color:white;border-radius:5px'>
+            <div><p style='font-weight:700;'>";
             echo $this;
-            echo"</p>
+            echo"</p></div>
             <div>";
             foreach ($this->equipes as $equipe) {
                 echo $equipe->getNom() . "<br>";
             }   
-
+            
             echo "</div>
             </div>";
         }
